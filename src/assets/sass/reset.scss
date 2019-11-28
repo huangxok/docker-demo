@@ -1,0 +1,100 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: Microsoft Yahei, Tahoma, Helvetica, Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+p,
+blockquote,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.35);
+  -webkit-touch-callout: none;
+}
+
+i,
+em,
+address,
+cite {
+  font-style: normal;
+}
+
+a:active,
+a:visited,
+img {
+  outline: none;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: MicrosoftYaHei, Arial, Helvetica, Hiragino Sans GB,
+    Microsoft Yahei, sans-serif;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  resize: none;
+}
+/* firefox 19+ */
+:-ms-input-placeholder {
+  color: #b5b5b5;
+}
+
+/* ie */
+input:-moz-placeholder {
+  color: #b5b5b5;
+}
