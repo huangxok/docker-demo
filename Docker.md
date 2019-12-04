@@ -325,7 +325,7 @@ server {
 }
 ```
 
-配置的意思是，监听来自 80 端口的流量，若访问域名是pea3nut.info（替换为你自己的域名），则全部转发到**http://127.0.0.1:8082**中。
+配置的意思是，监听来自 80 端口的流量，若访问域名是pea3nut.info（替换为你自己的域名），则全部转发到 **http://127.0.0.1:8081** 中。
 
 代理将服务器 **80** 端口转发到 **8081** 端口，即服务器 container的 **80** 端口映射到服务器的 **8081** 端口。
 
@@ -336,7 +336,7 @@ server {
 这样访问服务器的80端口就等同于访问container中的内容了
 配置完成后，重启 Nginx 服务器。若是 **Ubuntu** 可以使用**systemctl restart nginx**命令，不同 Linux 发行版稍有不同。
 
-访问域名 **xxx.com** 和 **服务器公网IP:8082** 是同样效果
+访问域名 **xxx.com** 和 **服务器公网IP:8081** 是同样效果
 
 ## 更新部署
 
@@ -346,7 +346,7 @@ server {
   
 ```js
 docker image pull hkmaster/docker-demo:latest
-docker container create -p 8082:80 docker-demo # 得到 yyy
+docker container create -p 8081:80 docker-demo # 得到 yyy
 docker container stop xxx # xxx 为当前运行的容器ID，可用 docker container ls 查看
 docker container start yyy # yyy 第二条命令返回值
 ```
