@@ -439,4 +439,4 @@ services:
 travis地址：
 [https://www.travis-ci.org/](https://www.travis-ci.org/)
 
-本项目README.md稳定为**github actions**使用
+本项目README.md为**[github actions](https://github.com/huangxok/docker-demo/blob/master/README.md)**使用
