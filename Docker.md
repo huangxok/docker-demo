@@ -40,7 +40,7 @@ docker有两个重要概念。
 * [window 版本](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
 * [Linux](https://get.docker.com/)
 
-本文采用 **Mac** 版本进行说明
+本文采用 **Mac** 版本进行什么
 
 ## 运行docker
 
@@ -105,7 +105,7 @@ Dockerfile文件的内容：（本地先执行**npm run build**产生**dist目�
 
 命令含义是说明？
 
-基于当前目录 **./** 打包一个镜像，镜像的名字是**docker-demo**，版本号是**1.0.0**。该命令会自动寻在Dockerfile来打包一个镜像。（**docker images**命令可以查看宿主机已有的镜像）
+基于当前目录 **./** 打包一个镜像，镜像的名字是**docker-demo**，版本号是**1.0.1**。该命令会自动寻在Dockerfile来打包一个镜像。（**docker images**命令可以查看宿主机已有的镜像）
 
 执行打包命令后，命令行会的到如下输出：
 
