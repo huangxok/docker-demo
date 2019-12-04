@@ -226,14 +226,15 @@ workflow文件要点：
   2.只有一个job，运行在虚拟机环境ubuntu-latest。
   3.第一步是获取源码，使用的 action 是actions/checkout。
   4.第二步是构建和部署，使用的 action 是JamesIves/github-pages-deploy-action。
-  5.第二步需要四个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录、构建脚本。其中，只有 GitHub 密钥是秘密变量，需要写在双括号里面，其他三个都可以直接写在文件里, secrets.ACCESS_TOKEN的 ACCESS_TOKEN是当前仓库的密钥名称 。
+  5.第二步需要四个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录、构建脚本。
+  其中，只有 GitHub 密钥是秘密变量，需要写在双括号里面，其他三个都可以直接写在文件里, secrets.ACCESS_TOKEN的 ACCESS_TOKEN是当前仓库的密钥名称 。
 ```
 
 * 第四步，保存上面的文件后，将整个仓库推送到 GitHub。
 
 GitHub 发现了 workflow 文件以后，就会自动运行。你可以在网站上实时查看运行日志，日志默认保存30天。
-等到 workflow 运行结束，访问 GitHub Page，会看到构建成果已经发上网了
-以后，每次修改后推送源码，GitHub Actions 都会自动运行，将构建产物发布到网页。
+等到 workflow 运行结束，访问 GitHub Page，会看到构建成果已经发上网了，
+以后每次修改后推送源码，GitHub Actions 都会自动运行，将构建产物发布到网页。
 
 ## 参考链接
 
