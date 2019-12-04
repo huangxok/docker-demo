@@ -427,7 +427,10 @@ services:
     container_name: myNginx2
 ```
 
-链接:写给前端的Docker实战教程
+docker 文档
+[https://docs.docker.com/](https://docs.docker.com/)
+
+写给前端的Docker实战教程
 [https://juejin.im/post/5d8440ebe51d4561eb0b2751](https://juejin.im/post/5d8440ebe51d4561eb0b2751)
 
 项目实践docker-demo镜像地址：
@@ -438,5 +441,8 @@ services:
 
 travis地址：
 [https://www.travis-ci.org/](https://www.travis-ci.org/)
+
+docker volume:
+[https://www.jianshu.com/p/e11e01b9d675](https://www.jianshu.com/p/e11e01b9d675)
 
 本项目README.md为**[github actions](https://github.com/huangxok/docker-demo/blob/master/README.md)**使用
