@@ -52,9 +52,9 @@ docker有两个重要概念。
 
 ```js
 Dockerfile：功能类似 **package.json**
-
+    V
 Image: 类似 **Win7旗舰版.rar**
-
+    v
 Container: 一个完成的操作系统
 ```
 
@@ -79,11 +79,11 @@ Container: 一个完成的操作系统
   └─ vue.config.js   // vue的配置文件
 ```
 
-好了，以上目录除了vue脚手架的目录外，涉及到的其他目录会在后续说明。
+以上目录除了vue脚手架的目录外，涉及到的其他目录会在后续说明。
 
 既然是创建文件，目录也生成了，这里面 **Dockerfile** 肯定是重点啦～
 
-Dockerfile文件的内容：（本地先执行**npm run build**产生**dist目录**）
+Dockerfile文件的内容：（本地先执行**npm run build** 产生 **dist目录**）
 
 ```js
   FROM nginx
@@ -95,7 +95,7 @@ Dockerfile文件的内容：（本地先执行**npm run build**产生**dist目�
 
 ## 打包镜像
 
-安装**Docker**后，我们就可以使用docker了
+安装 **Docker** 后，可以使用docker了
 
 在项目目录下执行 docker 命令
 
@@ -105,7 +105,7 @@ Dockerfile文件的内容：（本地先执行**npm run build**产生**dist目�
 
 命令含义是说明？
 
-基于当前目录 **./** 打包一个镜像，镜像的名字是**docker-demo**，版本号是**1.0.1**。该命令会自动寻在Dockerfile来打包一个镜像。（**docker images**命令可以查看宿主机已有的镜像）
+基于当前目录 **./** 打包一个镜像，镜像的名字是 **docker-demo**，版本号是**1.0.1**。该命令会自动寻找 **Dockerfile** 来打包一个镜像。（**docker images**命令可以查看宿主机已有的镜像）
 
 执行打包命令后，命令行会的到如下输出：
 
@@ -138,11 +138,11 @@ Dockerfile 内容说明：
   docker container start xxx    # xxx 为上一条命令运行得到的结果，即容器id
 ```
 
-接下来就可以在浏览器打开**127.0.0.1:**，这个时候应该能看到目录内容**index.html**内容了
+接下来就可以在浏览器打开**127.0.0.1:8081**，这个时候应该能看到目录内容**index.html**内容了
 
 在上边第一个命令中，我们使用 **docker container create** 来创建基于 **docker-demo:1.0.1** 镜像的一个容器，使用 **-p** 来指定端口绑定——将容器中的 **80** 端口绑定在宿主机的 **8081** 端口。执行完该命令，会返回一个容器ID
 第二个命令则是启动这个容器
-启动后，就能通过访问本机 **8081** 端口来达到访问容器内**80** 端口的效果了（docker container ls命令可以查看当前运行的容器）
+启动后，就能通过访问本机 **8081** 端口来达到访问容器内 **80** 端口的效果了（docker container ls命令可以查看当前运行的容器）
 
 容器运行后可以通过如下命令进入容器内部
 
