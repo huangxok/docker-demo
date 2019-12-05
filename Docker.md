@@ -180,7 +180,7 @@ Dockerfile 内容说明：
 
 ## 项目部署
 
-在没迁移 Docker 之前，若我想更新线上内容时，需要：
+在没迁移 Docker 之前，若想更新线上内容时，需要：
 
 1. 本地npm run build打包产出静态文件
 2. 手动通过 FTP 上传到服务器
@@ -193,13 +193,13 @@ Dockerfile 内容说明：
 3. CI 编译完成后，SSH 登录 VPS，删掉现有容器，用新镜像创建一个新容器
 
 实现自动化可持续部署：
-当进行修改时，可以免测。改完直接**git push**，而不必本地 **npm run build**
+当进行修改时，可以免测。改完直接 **git push** ，而不必本地 **npm run build**
 
 ## Github中的CI
 
 首先是让 Github 在每次更新代码时打包出一个镜像
 
-在 Github，可以有免费的 CI 资源用，它就是 [Travis CI](https://www.travis-ci.org/)
+在 Github，可以用免费的 CI 资源用，它就是 [Travis CI](https://www.travis-ci.org/)
 
 在项目中根目录中添加 **.travis.yml文件**，内容如下：
 
@@ -226,11 +226,11 @@ Dockerfile 内容说明：
 
 使用 **npm run build** 编译静态产出后，打包一个镜像并且 push 到远程。这里又一些细节需要说明一下
 
-1. 为了能够让镜像上传到服务器，你需要[hub.docker.com](https://hub.docker.com/)中注册一个账号，然后替换代码中的 **hkmaster/docker:latest** 为 **用户名/包名:latest** 即可
+1. 为了能够让镜像上传到服务器，需要在[hub.docker.com](https://hub.docker.com/)注册一个账号，然后替换代码中的 **hkmaster/docker:latest** 为 **用户名/包名:latest** 即可
 
-2. 使用 Github 登录 [Travis CI](https://www.travis-ci.org/) 后，在左边点击+加号添加自己的 Github 仓库后，需要移步到 Setting 为项目添加**DOCKER_USERNAME**和**DOCKER_PASSWORD**环境变量。这样保证我们可以秘密的登录 Docker Hub 而不被其他人看到自己的密码。
+2. 使用 Github 登录 [Travis CI](https://www.travis-ci.org/) 后，在左边点击+加号添加自己的 Github 仓库后，需要移步到 Setting 为项目添加**DOCKER_USERNAME**和**DOCKER_PASSWORD**环境变量。这样保证可以秘密登录 Docker Hub 而不被其他人看到自己的密码。
 
-按照 **.travis.yml** 的命令次序，在打包镜像时，**npm run build** 已经执行过了，项目产出已经有了(同本地执行**npm run build** )。不必在 **Docker** 容器中运行 **npm install** 和 **npm run build** 之类的
+按照 **.travis.yml** 的命令顺序，在打包镜像时，**npm run build** 已经执行过了，项目产出已经有了(同本地执行**npm run build** )。不必在 **Docker** 容器中运行 **npm install** 和 **npm run build** 之类的
 
 自动化以后，[Travis CI](https://www.travis-ci.org/)可以看到每次执行的日志，[hub.docker.com](https://hub.docker.com/)也可以找到你上传的docker文件
 
@@ -325,7 +325,7 @@ server {
 }
 ```
 
-配置的意思是，监听来自 80 端口的流量，若访问域名是pea3nut.info（替换为你自己的域名），则全部转发到 **http://127.0.0.1:8081** 中。
+配置的意思是，监听来自 **80** 端口的流量，若访问域名是xxx.com（替换为你自己的域名），则全部转发到 **http://127.0.0.1:8081** 中。
 
 代理将服务器 **80** 端口转发到 **8081** 端口，即服务器 container的 **80** 端口映射到服务器的 **8081** 端口。
 
@@ -333,7 +333,7 @@ server {
 服务器 80 ->  服务器 8081 <-> container:80
 ```
 
-这样访问服务器的80端口就等同于访问container中的内容了
+这样访问服务器的 **80** 端口就等同于访问container中的内容了
 配置完成后，重启 Nginx 服务器。若是 **Ubuntu** 可以使用**systemctl restart nginx**命令，不同 Linux 发行版稍有不同。
 
 访问域名 **xxx.com** 和 **服务器公网IP:8081** 是同样效果
